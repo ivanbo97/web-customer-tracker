@@ -6,6 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 
 
 
@@ -18,13 +21,20 @@ public class Customer {
 	@Column(name="id")
 	private int id;
 	
+	
 	@Column(name="first_name")
+	@NotNull(message="is required")
+	@Size(min=2,message="length should be >= 2")
 	private String firstName;
 	
+	
 	@Column(name="last_name")
+	@NotNull(message="is required")
+	@Size(min=2,message="length should be >= 2")
 	private String lastName;
 	
 	@Column(name="email")
+	@Pattern(regexp="^[a-z]{2,10}@[a-z]{2,6}\\.[a-z]{2,3}",message="Does not meet email requirements. Example: example@gmail.com")
 	private String email;
 	
 	public Customer() {
