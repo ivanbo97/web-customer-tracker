@@ -9,7 +9,9 @@
 	  	<link type="text/css"
 			  rel="stylesheet"
 			  href="${pageContext.request.contextPath}/resources/css/add-customer-style.css"/>
-	  
+	  <style>
+			.error{color:red}
+		</style>
 	</head>
 	<body>
 		
@@ -25,18 +27,21 @@
 				<table>
 					<tbody>
 						<tr>
-							<td><label>First Name</label></td>
+							<td><label>First Name *</label></td>
 							<td><form:input path="firstName"/></td>
+							<td><form:errors path="firstName" cssClass="error"/></td>
 						</tr>
 						
 						<tr>
-							<td><label>Last Name</label></td>
+							<td><label>Last Name *</label></td>
 							<td><form:input path="lastName"/></td>
+							<td><form:errors path="firstName" cssClass="error"/></td>
 						</tr>
 						
 						<tr>
-							<td><label>Email</label></td>
+							<td><label>Email *</label></td>
 							<td><form:input path="email"/></td>
+							<td><form:errors path="email" cssClass="error"/></td>
 						</tr>
 						
 						<tr>
