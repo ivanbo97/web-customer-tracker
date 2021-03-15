@@ -24,6 +24,8 @@
 		<div id="container">
 			<h3>Save customer</h3>
 			<form:form action="saveCustomer" modelAttribute="customer" method="POST">
+				<!-- in case of update we should know the id of the customer and send it to controller  -->
+				<form:hidden path="id"/>
 				<table>
 					<tbody>
 						<tr>
