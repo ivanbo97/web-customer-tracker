@@ -20,7 +20,7 @@ import com.luv2code.springdemo.service.CustomerService;
 
 @Controller
 @RequestMapping("/customer")
-public class CutomerController {
+public class CustomerController {
 	
 	@Autowired
 	private CustomerService customerService;
